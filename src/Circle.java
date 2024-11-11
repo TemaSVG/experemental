@@ -10,4 +10,7 @@ public class Circle {
         return Square;
     }
 
+    public int getRadius() {
+        return radius;
+    }
 }

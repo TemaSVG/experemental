@@ -1,6 +1,6 @@
 public class Rectangle {
-    int width;
-    int length;
+    double width;
+    double length;
 
     public Rectangle(int width, int length) {
         this.width = width;
@@ -10,5 +10,13 @@ public class Rectangle {
     public double getSquare() {
         double square = (double) (width * length) / 2;
         return square;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public double getLength() {
+        return length;
     }
 }
