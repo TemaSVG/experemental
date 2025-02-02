@@ -1,16 +1,22 @@
 package org.skypro.skyshop.product;
 
-import org.skypro.skyshop.basket.ProductBasket;
-
 public class DiscountedProduct extends Product {
-    int originalPriceProduct;
-    int discount;
+    final int originalPriceProduct;
+    final int discount;
 
     public DiscountedProduct(String nameProduct, int discount, int originalPriceProduct) {
         super(nameProduct);
         this.discount = discount;
         this.originalPriceProduct = originalPriceProduct;
+        if (originalPriceProduct <= 0) {
+            throw new IllegalArgumentException("Базовая цена должна быть больше нуля.");
+        }
+
+        if (discount < 0 || discount > 100) {
+            throw new IllegalArgumentException("Процент скидки должен быть в диапазоне от 0 до 100.");
+        }
     }
+
 
     @Override
     public double getPriceProduct() {
